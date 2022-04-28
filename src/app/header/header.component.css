@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    border: 1px solid #000;
+    justify-content: center;
+    height: 7vh;
+    align-items: center;
+    background-color: yellow;
+    text-transform: uppercase;
+}

@@ -1,0 +1,40 @@
+.pokemons-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.box {
+    border: 1px solid #000;
+    width: 15vw;
+    height: 30vh;
+    margin: 25px;
+    box-shadow: 1px 2px 5px gray;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+@media only screen and (max-width: 1000px){
+    .box {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .box {
+        width: 70%;
+    }
+}
