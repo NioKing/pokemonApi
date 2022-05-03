@@ -1,4 +1,6 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,10 +10,17 @@ import { DataService } from '../services/data.service';
 })
 export class SearchComponent implements OnInit {
  
-  constructor(private dataService: DataService) { }
+  constructor(
+    private dataService: DataService,
+    private dialog: MatDialog) { }
   pokemon: any[] = [];
+
+
   ngOnInit(): void {
+    
   }
+
+  
 
   // Search
   searchPokemon(name: any) {
@@ -20,9 +29,25 @@ export class SearchComponent implements OnInit {
         .subscribe((res: any) => {
           console.log(res);
           this.pokemon = res
-        })
-    }
+        
+     const dialogRef = this.dialog.open(DialogComponent, {
+      width: '500px',
+      data: {
+        pokemon: this.pokemon
+        
+      },
       
+    })
+
+    dialogRef.afterClosed().subscribe((res: any) => {
+      console.log(res);
+      
+    })
+        })
+    } 
   }
+
+
+
 
 }
