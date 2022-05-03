@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
     private dataService: DataService,
     private dialog: MatDialog) { }
   pokemon: any[] = [];
-
+  error: any
 
   ngOnInit(): void {
     
@@ -29,12 +29,12 @@ export class SearchComponent implements OnInit {
         .subscribe((res: any) => {
           console.log(res);
           this.pokemon = res
+          this.error = '';
         
      const dialogRef = this.dialog.open(DialogComponent, {
       width: '500px',
       data: {
-        pokemon: this.pokemon
-        
+        pokemon: this.pokemon,
       },
       
     })
@@ -43,8 +43,10 @@ export class SearchComponent implements OnInit {
       console.log(res);
       
     })
+        }, error => {
+          this.error = error
         })
-    } 
+    }
   }
 
 

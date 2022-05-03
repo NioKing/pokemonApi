@@ -16,8 +16,6 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  any() {
-    console.log(this.data);
-    
-  }
+
+
 }
