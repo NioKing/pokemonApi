@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { BodyComponent } from './body/body.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -14,12 +17,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppComponent,
     HeaderComponent,
     SearchComponent,
-    BodyComponent
+    BodyComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

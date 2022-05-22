@@ -1,4 +1,8 @@
 <div class="search-box">
-    <input type="text" placeholder="Enter Pokemon name" #searchTerm>
+    <input type="text" placeholder="Enter Pokemon name" #searchTerm (input)="searchTerm.value = searchTerm.value.toLowerCase()">
     <button type="button" (click)="searchPokemon(searchTerm.value)">Search</button>
+</div>
+
+<div *ngIf="error" class="error">
+    <span>Not found</span>
 </div>
